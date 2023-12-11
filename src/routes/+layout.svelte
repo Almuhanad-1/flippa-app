@@ -3,6 +3,11 @@
 </main>
 
 <style>
+	:global(html) {
+		box-sizing: border-box;
+		scroll-behavior: smooth;
+	}
+
 	:global(body) {
 		background-color: #333;
 		color: #fff;
