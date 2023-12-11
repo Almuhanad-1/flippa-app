@@ -1,18 +1,14 @@
-import { results } from '$db/mongo';
+import { listings } from '$lib/db/mongo';
 import type { Result } from '$lib/types';
 
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ params }) => {
 	const { id } = params;
-	const post = ((await results.findOne({ id })) as Result) || null;
+	console.log(id, 'id');
+	const listing = ((await listings.findOne({ id })) as unknown as Result) || null;
 
 	return {
-		post: post
-			? {
-					...post,
-					_id: post?._id.toString()
-			  }
-			: null
+		listing: listing ? { ...listing, _id: listing._id.toString() } : null
 	};
 };

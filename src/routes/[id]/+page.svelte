@@ -3,18 +3,17 @@
 	import { goto } from '$app/navigation';
 	export let data: PageData;
 
-	$: ({ post } = data);
+	$: ({ listing } = data);
 </script>
 
 <button on:click={() => goto('/')}>Go Back</button>
 
 <section>
-	{#if post}
-		<h1>{post.title}</h1>
-		<p>{post.price.toLocaleString()}$</p>
-		<p>{post.summary}</p>
-
-		<a href={post.listing_url} target="_blank">FIND IT IN FLIPPA</a>
+	{#if listing}
+		<h1>{listing.title}</h1>
+		<p>{listing.price.toLocaleString()}$</p>
+		<p>{listing.summary}</p>
+		<a href={listing.listing_url} target="_blank">FIND IT IN FLIPPA</a>
 	{/if}
 </section>
 
