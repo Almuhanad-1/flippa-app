@@ -1,7 +1,7 @@
 import type { ObjectId } from 'mongodb';
 
 interface Result {
-	_id: ObjectId;
+	_id: ObjectId | string;
 	id: string;
 	listing_url: string;
 	title: string;
