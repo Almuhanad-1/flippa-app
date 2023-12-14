@@ -4,7 +4,7 @@ import { MONGO_URI } from '$env/static/private';
 const client = new MongoClient(MONGO_URI, {
 	serverApi: {
 		version: ServerApiVersion.v1,
-		strict: true,
+		strict: false,
 		deprecationErrors: true
 	}
 });
