@@ -1,6 +1,6 @@
 import type { ObjectId } from 'mongodb';
 
-interface Result {
+interface Listing {
 	_id: ObjectId | string;
 	id: string;
 	listing_url: string;
@@ -82,4 +82,4 @@ interface Result {
 	under_offer: boolean;
 }
 
-export type { Result };
+export type { Listing };

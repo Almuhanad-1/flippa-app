@@ -1,11 +1,11 @@
-import type { Result } from '$lib/types';
+import type { Listing } from '$lib/types';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async (event) => {
 	const page = event.url.searchParams.get('page') ?? '1';
-	const results = (await event.fetch('/api/getResults').then((res) => res.json())) as Result[];
+	const listings = (await event.fetch('/api/getListings').then((res) => res.json())) as Listing[];
 	return {
-		results,
+		listings,
 		page: Number(page)
 	};
 };
