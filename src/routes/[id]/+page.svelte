@@ -1,12 +1,12 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import { goto } from '$app/navigation';
+	import GoBackBtn from '$lib/components/GoBackBtn.svelte';
 	export let data: PageData;
 
 	$: ({ listing } = data);
 </script>
 
-<button on:click={() => goto('/')}>Go Back</button>
+<GoBackBtn />
 
 <section>
 	{#if listing}
@@ -26,17 +26,5 @@
 	a:hover {
 		color: #ddd;
 		border-bottom: 2px solid #ddd;
-	}
-
-	button {
-		background-color: #eee;
-		border: none;
-		border-radius: 0.5rem;
-		padding: 0.3rem 0.5rem;
-		font-size: 0.9rem;
-		cursor: pointer;
-	}
-	button:hover {
-		background-color: #ddd;
 	}
 </style>

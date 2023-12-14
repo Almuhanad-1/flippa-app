@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
+	import GoBackBtn from '$lib/components/GoBackBtn.svelte';
 	import ListingCard from '$lib/components/ListingCard.svelte';
 	import ListingCardContainer from '$lib/components/ListingCardContainer.svelte';
 	import type { PageData } from './$types';
@@ -9,7 +9,7 @@
 	console.log(listings);
 </script>
 
-<button on:click={() => goto('/')}>Go Back</button>
+<GoBackBtn />
 
 <section>
 	<ListingCardContainer>
