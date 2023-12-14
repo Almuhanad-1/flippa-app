@@ -1,20 +1,4 @@
-/*
-[
-  {
-    $search: {
-      index: "searchListings",
-      text: {
-        query: "shop",
-        path: {
-          wildcard: "*"
-        }
-      }
-    }
-  }
-]
-*/
-
-import type { RequestHandler } from './$types';
+import type { RequestHandler } from '@sveltejs/kit';
 import { listings } from '$lib/db/mongo';
 import type { Listing } from '$lib/types';
 

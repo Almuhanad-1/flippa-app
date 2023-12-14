@@ -1,6 +1,6 @@
-import type { RequestHandler } from './$types';
 import { listings } from '$lib/db/mongo';
 import type { Listing } from '$lib/types';
+import type { RequestHandler } from '@sveltejs/kit';
 
 const NO_OF_RESULTS_PER_PAGE = 10;
 
